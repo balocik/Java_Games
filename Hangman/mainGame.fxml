@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="482.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hangmanforkids.MainGameController">
+   <children>
+      <Pane layoutY="-1.0" prefHeight="487.0" prefWidth="1045.0">
+         <children>
+            <ImageView fx:id="imageBackground" fitHeight="487.0" fitWidth="868.0" layoutX="108.0" onMouseEntered="#unglowEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/funny-looking-skull-54430-1920x1080.jpg" />
+               </image>
+            </ImageView>
+            <Pane layoutY="-1.0" prefHeight="488.0" prefWidth="161.0" style="-fx-background-color: #26316D;">
+               <children>
+                  <Label layoutX="26.0" layoutY="43.0" text="MENU" textFill="#c5c1c1" underline="true">
+                     <font>
+                        <Font name="Adobe Gurmukhi" size="40.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="btnGiveUp" layoutX="45.0" layoutY="131.0" onMouseClicked="#giveUp" text="Give Up" textFill="#dddddd" underline="true">
+                     <font>
+                        <Font name="Adobe Gurmukhi" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="btnRestart" layoutX="33.0" layoutY="184.0" onMouseClicked="#restartGame" text="New Game" textFill="#dddddd" underline="true">
+                     <font>
+                        <Font name="Adobe Gurmukhi" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="btnClose" layoutX="56.0" layoutY="238.0" onMouseClicked="#closeGame" text="Close" textFill="#dddddd" underline="true">
+                     <font>
+                        <Font name="Adobe Gurmukhi" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="884.0" layoutY="-1.0" prefHeight="488.0" prefWidth="161.0" style="-fx-background-color: #26316D;">
+               <children>
+                  <Label layoutX="12.0" layoutY="42.0" text="PLAYERS" textFill="#c5c1c1" underline="true">
+                     <font>
+                        <Font name="Adobe Gurmukhi" size="36.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="5.0" layoutY="113.0" opacity="0.44" prefHeight="40.0" prefWidth="152.0" style="-fx-background-color: #B9BFC8;">
+                     <children>
+                        <Label fx:id="lblPlayersList" alignment="TOP_CENTER" layoutY="11.0" prefHeight="19.0" prefWidth="152.0" text="Player 1" textFill="#210808" />
+                        <ImageView fx:id="imgPlayer1Turn" fitHeight="29.0" fitWidth="26.0" layoutX="2.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8-filled_circle_filled.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="5.0" layoutY="164.0" opacity="0.44" prefHeight="40.0" prefWidth="152.0" style="-fx-background-color: #B9BFC8;">
+                     <children>
+                        <Label fx:id="lblPlayersList1" alignment="TOP_CENTER" layoutY="11.0" prefHeight="19.0" prefWidth="152.0" text="Player 2" textFill="#210808" />
+                        <ImageView fx:id="imgPlayer2Turn" fitHeight="29.0" fitWidth="26.0" layoutX="2.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8-filled_circle_filled.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <JFXTextField fx:id="txtWordToGuessInput" alignment="CENTER" layoutX="465.0" layoutY="386.0" promptText="Enter Word to Guess" unFocusColor="BLACK">
+               <effect>
+                  <ColorAdjust brightness="0.71" />
+               </effect></JFXTextField>
+            <ImageView fx:id="addWord" fitHeight="44.0" fitWidth="54.0" layoutX="518.0" layoutY="429.0" onMouseClicked="#misteryWord" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-plus_2_math_filled.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="440.0" layoutY="23.0" text="Your mistery word is:" textFill="#4d4d4d">
+               <font>
+                  <Font name="Adobe Gurmukhi" size="25.0" />
+               </font>
+            </Label>
+            <Pane layoutX="408.0" layoutY="72.0" opacity="0.6" prefHeight="44.0" prefWidth="265.0" style="-fx-background-color: #4d4d4d;">
+               <children>
+                  <Label fx:id="lblMisteryWord" alignment="CENTER" layoutX="15.0" layoutY="-1.0" prefHeight="51.0" prefWidth="236.0" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <ImageView fx:id="A" fitHeight="26.0" fitWidth="30.0" layoutX="627.0" layoutY="176.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-a.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="B" fitHeight="26.0" fitWidth="30.0" layoutX="660.0" layoutY="176.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-b.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="C" fitHeight="26.0" fitWidth="30.0" layoutX="694.0" layoutY="176.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-c.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="D" fitHeight="26.0" fitWidth="30.0" layoutX="728.0" layoutY="176.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-d.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="E" fitHeight="26.0" fitWidth="30.0" layoutX="761.0" layoutY="176.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-e.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="F" fitHeight="26.0" fitWidth="30.0" layoutX="627.0" layoutY="209.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-f.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="G" fitHeight="26.0" fitWidth="30.0" layoutX="660.0" layoutY="209.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-g.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="H" fitHeight="26.0" fitWidth="30.0" layoutX="694.0" layoutY="209.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-h.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="I" fitHeight="26.0" fitWidth="30.0" layoutX="728.0" layoutY="209.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-i.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="J" fitHeight="26.0" fitWidth="30.0" layoutX="761.0" layoutY="209.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-j.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="K" fitHeight="26.0" fitWidth="30.0" layoutX="627.0" layoutY="243.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-k.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="L" fitHeight="26.0" fitWidth="30.0" layoutX="660.0" layoutY="243.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-l.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="M" fitHeight="26.0" fitWidth="30.0" layoutX="694.0" layoutY="243.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-m.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="N" fitHeight="26.0" fitWidth="30.0" layoutX="728.0" layoutY="243.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-n.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="O" fitHeight="26.0" fitWidth="30.0" layoutX="761.0" layoutY="243.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-o.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="P" fitHeight="26.0" fitWidth="30.0" layoutX="627.0" layoutY="279.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-p.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Q" fitHeight="26.0" fitWidth="30.0" layoutX="660.0" layoutY="279.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-q.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="R" fitHeight="26.0" fitWidth="30.0" layoutX="694.0" layoutY="279.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-r.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="S" fitHeight="26.0" fitWidth="30.0" layoutX="728.0" layoutY="279.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-s.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="T" fitHeight="26.0" fitWidth="30.0" layoutX="761.0" layoutY="279.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-t.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="U" fitHeight="26.0" fitWidth="30.0" layoutX="627.0" layoutY="314.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-u.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="V" fitHeight="26.0" fitWidth="30.0" layoutX="660.0" layoutY="314.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-v.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="W" fitHeight="26.0" fitWidth="30.0" layoutX="694.0" layoutY="314.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-w.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="X" fitHeight="26.0" fitWidth="30.0" layoutX="728.0" layoutY="314.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-x.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Y" fitHeight="26.0" fitWidth="30.0" layoutX="761.0" layoutY="314.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-y.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Z" fitHeight="26.0" fitWidth="30.0" layoutX="694.0" layoutY="353.0" onMouseClicked="#checkLetter" onMouseEntered="#glowLetterEffect" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-z.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgHangman" fitHeight="254.0" fitWidth="224.0" layoutX="184.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/0.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgGameOver" fitHeight="220.0" fitWidth="302.0" layoutX="612.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/gameover1.gif" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgWinner" fitHeight="240.0" fitWidth="236.0" layoutX="620.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/winner0.gif" />
+               </image>
+            </ImageView>
+         </children></Pane>
+   </children>
+</AnchorPane>

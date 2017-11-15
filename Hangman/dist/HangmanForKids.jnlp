@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="HangmanForKids.jnlp">
+  <information>
+    <title>HangmanForKids</title>
+    <vendor>wojciechkuczer</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="HangmanForKids.jar" size="5906073" download="eager" />
+    <jar href="lib/fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="lib/fontawesomefx-glyphsbrowser-all-1.3.0.jar" size="5379925" download="eager" />
+    <jar href="lib/jfoenix.jar" size="2384520" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="HangmanForKids" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="hangmanforkids.HangmanForKids"  name="HangmanForKids" />
+  <update check="always"/>
+</jnlp>
